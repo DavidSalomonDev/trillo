@@ -1,0 +1,27 @@
+.container{
+    max-width: 120rem; //ocupy no more than 1200px
+    margin: 8rem auto; //top-bottom / right-left
+    background-color: var(--color-grey-light-2);
+    box-shadow: var(--shadow-dark);
+}
+
+.header{
+    height: 7rem;
+    background-color: #fff;
+    border-bottom: var(--color-grey-light-2);
+}
+
+.content{
+    display: flex; //defining flexbox for the parent element
+}
+
+.sidebar{
+    background-color: var(--color-grey-dark-1);
+
+    flex: 0 0 18%; //grow - shrink - basis / defining how this box will react in flex
+}
+
+.hotel-view{
+    background-color: #fff;
+    flex: 1; // this element should grow as much as it can
+}
