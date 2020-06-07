@@ -1,0 +1,137 @@
+////////////////////////////////////////////////
+// LOGO
+.logo {
+    height: 3.25rem;
+    margin-left: 2rem;
+}
+
+////////////////////////////////////////////////
+// SEARCHBOX
+.search {
+    flex:0 0 40%;
+    // A flex item can also be a flex container
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        //In elements, font settings are not applied, we need to inherit them
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all .2s;
+        //the button will be inside the search box
+        margin-right: -3.5rem;
+
+        //Clicking the element, it'll expand
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        //Change placeholder color
+        &::--webkit-input-placeholder{
+            font-weight: 100;
+            color: var(--color-grey-dark-4);
+        }
+    }
+
+    //We are selecting child elements to become the back-color the same
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
+        
+
+        &:focus{
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        //Changing SVG color in CSS
+        fill: var(--color-grey-dark-3);
+    }
+}
+
+////////////////////////////////////////////////
+// USER NAVIGATION
+.user-nav {
+    //Making flex item as flex container
+    display: flex;
+    align-items: center;
+    //Elements will stretch from top to bottom
+    align-self: stretch;
+
+    //Make a selector for all of the direct children
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        //Combined with align-self it will work
+        height: 100%;
+        //aligning items to the middle from top to bottom
+        display: flex;
+        align-items: center;
+    }
+
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
+
+    &__icon-box {
+        //We put it in icon box, because this positioning method doesn't work quite well in SVG
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-grey-dark-2);
+        
+    }
+
+    &__notification {
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        //border-radius at 50% makes the element a circle
+        border-radius: 50%;
+        background-color: var(--color-primary);
+        color: white;
+        //Make the notification number centered
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+
+        //flexbox works with text too
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    &__user {}
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
+
+    &__user-name {}
+}
