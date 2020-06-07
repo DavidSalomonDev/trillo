@@ -26,6 +26,10 @@
     background-color: var(--color-grey-dark-1);
 
     flex: 0 0 18%; //grow - shrink - basis / defining how this box will react in flex
+    //Make elements to go to extreme sides but vertically
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .hotel-view{
