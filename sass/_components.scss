@@ -449,16 +449,24 @@
         margin-right: .7rem;
 
         //Older browser
-        // background-image: url(../img/chevron-thin-right.svg);
-        // background-size: cover;
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
 
         //Newer browser - Mask
-        // A Mask define an area where we can look through the element
+        
+        //We use supports to apply this settings on supported browsers, if not, 
+        // the browser will use the setting applied above
+        @supports (-webkit-mask-image: url()) or (mask-image: url()){
+             // A Mask define an area where we can look through the element
         background-color: var(--color-primary);
         -webkit-mask-image: url(../img/chevron-thin-right.svg);
         -webkit-mask-size: cover;
         mask-image: url(../img/chevron-thin-right.svg);
         mask-size: cover;
+        //we select backimage as none because if this is not stated, the setting above will apply
+        background-image: none;
+        }
+        
     }
 }
 
