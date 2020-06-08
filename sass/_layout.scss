@@ -3,6 +3,13 @@
     margin: 8rem auto; //top-bottom / right-left
     background-color: var(--color-grey-light-2);
     box-shadow: var(--shadow-dark);
+
+    @media only screen and (max-width: $bp-largest){
+        margin: 0;
+        //This setting should apply even the screen is smaller
+        max-width: 100%;
+        width: 100%;
+    }
 }
 
 .header{
@@ -16,10 +23,21 @@
     justify-content: space-between;
     //Vertical alignment
     align-items: center;
+
+    //search bar in another line
+    @media only screen and (max-width: $bp-smallest) {
+        flex-wrap: wrap;
+        align-content: space-around;
+        height: 11rem;
+    }
 }
 
 .content{
     display: flex; //defining flexbox for the parent element
+
+    @media only screen and (max-width: $bp-medium){
+        flex-direction: column; //Changing elements to column
+    }
 }
 
 .sidebar{
@@ -42,6 +60,14 @@
     padding: 4.5rem;
     background-color: var(--color-grey-light-1);
     border-bottom: var(--line);
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        flex-direction: column;
+    }
 }
 
 
@@ -53,6 +79,16 @@
     //Amount of width that this element will use
     flex: 0 0 60%;
     margin-right: 4.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-right: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-small){
+        margin-right: 0;
+        margin-bottom: 3rem;
+    }
 }
 
 .user-reviews{
